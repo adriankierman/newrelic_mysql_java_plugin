@@ -26,14 +26,14 @@ public class MySQLAgent extends Agent {
     
     private static final Logger logger = Logger.getLogger(MySQLAgent.class);
     
-    private static final String GUID = "com.newrelic.plugins.mysql.instance";
-    private static final String version = "2.0.0";
+    private static final String GUID = "us.hcgov.plugins.mysql.instance";
+    private static final String version = "2.0.1";
 
     public static final String AGENT_DEFAULT_HOST = "localhost"; // Default values for MySQL Agent
     public static final String AGENT_DEFAULT_USER = "newrelic";
     public static final String AGENT_DEFAULT_PASSWD = "f63c225f4abe9e13";
     public static final String AGENT_DEFAULT_PROPERTIES = "";
-    public static final String AGENT_DEFAULT_METRICS = "status,newrelic";
+    public static final String AGENT_DEFAULT_METRICS = "master,slave,status,newrelic";
 
     private final String name; // Agent Name
 
@@ -294,6 +294,8 @@ public class MySQLAgent extends Agent {
                 }
 
                 derived.put("newrelic/replication_status", replication_status);
+//                String readable_status = replication_status == 0.0f ? "OK" : "FAILING";
+//                derived.put("newrelic/replication_readable_status", readable_status);
             }
 
             if (areRequiredMetricsPresent("newrelic/slave_relay_log_bytes", existing, "slave/relay_log_pos")) {
