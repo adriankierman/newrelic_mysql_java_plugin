@@ -97,5 +97,13 @@
         <copy file="newrelic-mysql-plugin.spec.in" tofile="build/wand/newrelic-mysql-plugin.spec.in" />
         <copy file="newrelic-mysql-plugin-files.txt" tofile="build/wand/newrelic-mysql-plugin-files.txt" />
         <copy file="${build.tar.src.dir}/etc/init.d/newrelic-mysql-plugin.rh" tofile="build/wand/newrelic-mysql-plugin-skel/etc/init.d/newrelic_mysql_daemon" />
+        <property name="rpmwand-path" location="scripts/rpmwand"/>
+        <exec executable="${rpmwand-path}" dir="build/wand">
+            <arg value="build"/>
+            <arg value="newrelic-mysql-plugin"/>
+            <arg value="${version}"/>
+            <arg value="1"/>
+        </exec>
+        <copy file="build/wand/RPMS/noarch/newrelic-mysql-plugin-${version}-1.noarch.rpm" tofile="dist/newrelic-mysql-plugin-${version}-1.noarch.rpm" />
     </target>
 </project>

@@ -23,3 +23,4 @@
 %attr(644,-,-) /opt/newrelic/newrelic_mysql_plugin-2.0.1/mysql_user.sql
 %attr(644,-,-) /opt/newrelic/newrelic_mysql_plugin-2.0.1/plugin.jar
 %attr(644,-,-) /opt/newrelic/newrelic_mysql_plugin-2.0.1/README.md
+%attr(644,-,-) /opt/newrelic/newrelic_mysql_plugin-2.0.1/rpmwand
