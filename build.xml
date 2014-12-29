@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <project name="newrelic_mysql_extension" default="dist" basedir=".">
 
-    <property name="version" value="2.0.0"/>
+    <property name="version" value="2.0.1"/>
     <property name="filename" value="newrelic_mysql_plugin-${version}"/>
     <property name="jarfile" value="plugin.jar"/>
     <property name="tarfile" value="${filename}.tar.gz"/>
+    <property name="sourcetarfile" value="${filename}.tar"/>
 
     <property name="build.dir" location="build"/>
     <property name="build.classes.dir" value="${build.dir}/classes"/>
@@ -83,5 +84,18 @@
         <tar compression="gzip" destfile="${dist.dir}/${tarfile}">
             <tarfileset dir="${build.tar.dir}" />
         </tar>
+
+    </target>
+
+    <target name="rpm" depends="dist" description="create an rpm for distribution">
+        <mkdir dir="build/wand/newrelic-mysql-plugin-skel/opt/newrelic" />
+        <mkdir dir="build/wand/newrelic-mysql-plugin-skel/etc/init.d" />
+        <copy todir="build/wand/newrelic-mysql-plugin-skel/opt/newrelic" >
+            <fileset dir="${build.tar.src.dir}/.."/>
+        </copy>
+
+        <copy file="newrelic-mysql-plugin.spec.in" tofile="build/wand/newrelic-mysql-plugin.spec.in" />
+        <copy file="newrelic-mysql-plugin-files.txt" tofile="build/wand/newrelic-mysql-plugin-files.txt" />
+        <copy file="${build.tar.src.dir}/etc/init.d/newrelic-mysql-plugin.rh" tofile="build/wand/newrelic-mysql-plugin-skel/etc/init.d/newrelic_mysql_daemon" />
     </target>
 </project>

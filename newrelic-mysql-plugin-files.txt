@@ -1,0 +1,25 @@
+#File list of newrelic-mysql-plugin
+#See details of directives at http://www.rpm.org/max-rpm/s1-rpm-inside-files-list-directives.html
+
+%attr(744,root,root) /etc/init.d/newrelic_mysql_daemon
+%dir /opt/newrelic/newrelic_mysql_plugin-2.0.1
+%attr(644,-,-) /opt/newrelic/newrelic_mysql_plugin-2.0.1/CATEGORIES.TXT
+%attr(644,-,-) /opt/newrelic/newrelic_mysql_plugin-2.0.1/CHANGELOG.md
+%dir /opt/newrelic/newrelic_mysql_plugin-2.0.1/config
+%attr(644,-,-) /opt/newrelic/newrelic_mysql_plugin-2.0.1/config/metric.category.json
+%attr(644,-,-) /opt/newrelic/newrelic_mysql_plugin-2.0.1/config/newrelic.template.json
+%attr(644,-,-) /opt/newrelic/newrelic_mysql_plugin-2.0.1/config/plugin.template.json
+%dir /opt/newrelic/newrelic_mysql_plugin-2.0.1/etc
+%dir /opt/newrelic/newrelic_mysql_plugin-2.0.1/etc/default
+%attr(644,-,-) /opt/newrelic/newrelic_mysql_plugin-2.0.1/etc/default/newrelic-mysql-plugin
+%dir /opt/newrelic/newrelic_mysql_plugin-2.0.1/etc/init
+%config %attr(644,-,-) /opt/newrelic/newrelic_mysql_plugin-2.0.1/etc/init/newrelic-mysql-plugin.conf
+%dir /opt/newrelic/newrelic_mysql_plugin-2.0.1/etc/init.d
+%attr(644,-,-) /opt/newrelic/newrelic_mysql_plugin-2.0.1/etc/init.d/newrelic-mysql-plugin.debian
+%attr(644,-,-) /opt/newrelic/newrelic_mysql_plugin-2.0.1/etc/init.d/newrelic-mysql-plugin.initv
+%attr(644,-,-) /opt/newrelic/newrelic_mysql_plugin-2.0.1/etc/init.d/newrelic-mysql-plugin.rh
+%attr(644,-,-) /opt/newrelic/newrelic_mysql_plugin-2.0.1/LICENSE
+%attr(644,-,-) /opt/newrelic/newrelic_mysql_plugin-2.0.1/MYSQL.TXT
+%attr(644,-,-) /opt/newrelic/newrelic_mysql_plugin-2.0.1/mysql_user.sql
+%attr(644,-,-) /opt/newrelic/newrelic_mysql_plugin-2.0.1/plugin.jar
+%attr(644,-,-) /opt/newrelic/newrelic_mysql_plugin-2.0.1/README.md
